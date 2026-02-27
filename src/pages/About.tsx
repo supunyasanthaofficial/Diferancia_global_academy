@@ -1,5 +1,8 @@
 import Header from "../components/Header";
 import Header2 from "../assets/images/Header2.jpg";
+import WhatWeDoSection from "../components/WhatWeDoSection";
+import LecturerSection from "../components/LecturesSection";
+import PartnerSection from "../components/PartnerSection";
 
 const About = () => {
   return (
@@ -11,6 +14,9 @@ const About = () => {
         height="400px"
         showButtons={true}
       />
+      <WhatWeDoSection/>
+      <LecturerSection/>
+      <PartnerSection/>
     </main>
   );
 };
