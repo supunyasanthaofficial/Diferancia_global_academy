@@ -1,5 +1,7 @@
 import Header from "../components/Header";
 import Header4 from "../assets/images/Header4.jpg";
+import Map from "../components/Map";
+import ContactSection from "../components/ContactSection";
 
 const Contact = () => {
   return (
@@ -11,6 +13,8 @@ const Contact = () => {
         height="400px"
         showButtons={false}
       />
+      <ContactSection/>
+      <Map/>
     </main>
   );
 };
