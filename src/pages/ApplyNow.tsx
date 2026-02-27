@@ -1,21 +1,19 @@
 import Header from "../components/Header";
-import Header2 from "../assets/images/Header2.jpg";
+import Header6 from "../assets/images/Header6.jpg";
 import ApplyNowSection from "../components/ApplyNowSection";
 
 const ApplyNow = () => {
   return (
     <main>
       <Header
-        title="Apply Now"
+        title="We provide quality hospitality education with practical training for successful careers."
         subtitle="Intensive Training / International Certification / Job Placement Support"
-        bgImage={Header2}
+        bgImage={Header6}
         height="400px"
         showButtons={true}
       />
-      <section className="bg-[#0a1128]">
-        <ApplyNowSection/>
 
-      </section>
+      <ApplyNowSection />
     </main>
   );
 };
