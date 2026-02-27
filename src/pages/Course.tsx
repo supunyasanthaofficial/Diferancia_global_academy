@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Header3 from "../assets/images/Header3.jpg";
+import Header5 from "../assets/images/Header5.jpg";
 
 const Course = () => {
   return (
@@ -7,7 +7,7 @@ const Course = () => {
       <Header
         title="Explore our industry focused hospitality courses designed for real world success."
         subtitle="Intensive Training / International Certification / Job Placement Support"
-        bgImage={Header3}
+        bgImage={Header5}
         height="400px"
         showButtons={true}
       />
