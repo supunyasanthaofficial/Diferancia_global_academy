@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import LB1 from "../assets/images/LB1.jpg";
 import LB2 from "../assets/images/LB2.png";
 import LB3 from "../assets/images/LB3.png";
-import L1 from "../assets/images/l1.png";
+import L1 from "../assets/images/L1.png";
 
 interface Lecturer {
   id: number;
