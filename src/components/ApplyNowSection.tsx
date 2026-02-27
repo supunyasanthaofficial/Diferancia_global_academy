@@ -86,9 +86,9 @@ const ApplyNow: React.FC = () => {
                 <option value="cookery">IT</option>
                 <option value="bakery">Bakery & Pastry</option>
               </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-black font-bold">
+              {/* <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-black font-bold">
                 V
-              </div>
+              </div> */}
             </div>
           </div>
 
