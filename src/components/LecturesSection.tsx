@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import LB1 from "../assets/images/LB1.jpg";
@@ -34,9 +34,27 @@ const lecturers: Lecturer[] = [
     qualification: "Certificate in Front Office Management",
     image: LB3,
   },
+  {
+    id: 3,
+    name: "Mr.Megatron",
+    qualification: "Certificate in Front Office Management",
+    image: LB3,
+  },
 ];
 
 const LecturerSection: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const cardWidth = scrollRef.current.offsetWidth / 3 + 32;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -cardWidth : cardWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="bg-white pt-13">
       <div className="flex items-center justify-center mb-12 px-4">
@@ -49,63 +67,77 @@ const LecturerSection: React.FC = () => {
 
       <section className="bg-[#D9D9D9] py-20 px-4 md:px-10">
         <div className="relative max-w-6xl mx-auto flex items-center">
-          <button className="absolute left-[-20px] md:left-[-80px] bg-white rounded-full z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block">
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-[-20px] md:left-[-80px] bg-white rounded-full z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block"
+          >
             <ChevronLeft size={54} strokeWidth={1} />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-            {lecturers.map((lecturer) => (
-              <div
-                key={lecturer.id}
-                className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]"
-              >
-                <div className="relative h-52 overflow-hidden">
-                  <img
-                    src={lecturer.image}
-                    alt={`${lecturer.name} background`}
-                    className="w-full h-full object-cover"
-                  />
+          <div className="overflow-hidden w-full">
+            <div
+              ref={scrollRef}
+              className="flex gap-8 overflow-x-auto scroll-smooth snap-x py-2"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {lecturers.map((lecturer) => (
+                <div
+                  key={lecturer.id}
+                  className="snap-start shrink-0 w-[85vw] md:w-[calc(33.333%-22px)]"
+                >
+                  <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.02]">
+                    <div className="relative h-52 overflow-hidden">
+                      <img
+                        src={lecturer.image}
+                        alt={`${lecturer.name} background`}
+                        className="w-full h-full object-cover"
+                      />
 
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-20 h-20 rounded-full border-4 border-white overflow-hidden bg-gray-200 shadow-md">
-                      {lecturer.avatar ? (
-                        <img
-                          src={lecturer.avatar}
-                          alt={lecturer.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gray-300">
-                          <svg
-                            className="w-12 h-12 text-gray-500"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                              clipRule="evenodd"
+                      <div className="absolute bottom-4 left-4">
+                        <div className="w-20 h-20 rounded-full border-4 border-white overflow-hidden bg-gray-200 shadow-md">
+                          {lecturer.avatar ? (
+                            <img
+                              src={lecturer.avatar}
+                              alt={lecturer.name}
+                              className="w-full h-full object-cover"
                             />
-                          </svg>
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-300">
+                              <svg
+                                className="w-12 h-12 text-gray-500"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                          )}
                         </div>
-                      )}
+                      </div>
+                    </div>
+
+                    <div className="p-6 min-h-[150px] flex flex-col justify-center">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        {lecturer.name}
+                      </h3>
+                      <p className="text-gray-600 font-medium leading-snug">
+                        {lecturer.qualification}
+                      </p>
                     </div>
                   </div>
                 </div>
-
-                <div className="p-6 min-h-[150px] flex flex-col justify-center">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {lecturer.name}
-                  </h3>
-                  <p className="text-gray-600 font-medium leading-snug">
-                    {lecturer.qualification}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          <button className="absolute right-[-20px] md:right-[-80px] bg-white rounded-full z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block">
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-[-20px] md:right-[-80px] bg-white rounded-full z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block"
+          >
             <ChevronRight size={54} strokeWidth={1} />
           </button>
         </div>
