@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Header5 from "../assets/images/Header5.jpg";
+import CoursesSection from "../components/CoursesSection";
 
 const Course = () => {
   return (
@@ -11,6 +12,7 @@ const Course = () => {
         height="400px"
         showButtons={true}
       />
+      <CoursesSection/>
     </main>
   );
 };
