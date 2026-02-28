@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
-                to="/courses"
+                to="/course"
                 className="hover:text-orange-400 transition-colors"
               >
                 Courses
