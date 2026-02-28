@@ -49,7 +49,7 @@ const LecturerSection: React.FC = () => {
 
       <section className="bg-[#D9D9D9] py-20 px-4 md:px-10">
         <div className="relative max-w-6xl mx-auto flex items-center">
-          <button className="absolute left-[-20px] md:left-[-60px] z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block">
+          <button className="absolute left-[-20px] md:left-[-80px] bg-white rounded-full z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block">
             <ChevronLeft size={54} strokeWidth={1} />
           </button>
 
@@ -105,7 +105,7 @@ const LecturerSection: React.FC = () => {
             ))}
           </div>
 
-          <button className="absolute right-[-20px] md:right-[-60px] z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block">
+          <button className="absolute right-[-20px] md:right-[-80px] bg-white rounded-full z-10 p-2 text-black hover:scale-110 transition-transform hidden lg:block">
             <ChevronRight size={54} strokeWidth={1} />
           </button>
         </div>
