@@ -4,8 +4,10 @@ import C2 from "../assets/images/C2.jpg";
 import C3 from "../assets/images/C3.jpg";
 import C4 from "../assets/images/C4.jpg";
 import C5 from "../assets/images/C5.jpg";
+import C6 from "../assets/images/C6.jpg"
 import E1 from "../assets/images/E1.jpg";
 import E2 from "../assets/images/E2.jpg";
+import E3 from "../assets/images/E3.jpg"
 
 const CoursesSection: React.FC = () => {
   const sections = [
@@ -15,7 +17,7 @@ const CoursesSection: React.FC = () => {
         {
           title: "Diploma in Housekeeping Operations",
           description:
-            "Professional housekeping trainiing fo clean,safe, and effeicient environments.",
+            "Professional housekeping trainiing fo clean,safe,and effeicient environments.",
           image: C1,
         },
         {
@@ -39,8 +41,14 @@ const CoursesSection: React.FC = () => {
         {
           title: "Certificate in Pastry & Bakery",
           description:
-            "Learn baking techniques with professional cleaning, maintenance, and safe, efficient practices.",
+            "Learn baking techniques with professional cleaning,maintenance,and safe, efficient practices.",
           image: C5,
+        },
+        {
+          title: "Certificate in Hotel and Tourism Management",
+          description:
+            "Learn baking techniques with professional cleaning, maintenance, and safe, efficient practices.",
+          image: C6,
         },
       ],
     },
@@ -57,14 +65,15 @@ const CoursesSection: React.FC = () => {
           title: "Certificate in Information Technology",
           description:
             "Gain IT skills while learning professional cleaning, maintenance, and efficient workspce.",
-          image: E2,
+          image: E3,
         },
         {
-          title: "Certificate in Information Technology",
+          title: "Certificate in Psychology",
           description:
-            "Gain IT skills while learning professional cleaning, maintenance, and efficient workspce.",
+            "Understand human behavior,mental processes, and practical applications in everyday life.",
           image: E2,
         },
+        
       ],
     },
   ];
