@@ -13,12 +13,13 @@ interface SliderProps {
   data: SliderData[];
 }
 
-const CustomSlider: React.FC<SliderProps> = ({ title, data }) => {
+const Slider: React.FC<SliderProps> = ({ title, data }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 350;
+      const cardWidth = scrollRef.current.offsetWidth / 2 + 12;
+      const scrollAmount = cardWidth * 2;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -39,29 +40,31 @@ const CustomSlider: React.FC<SliderProps> = ({ title, data }) => {
       <div className="relative w-full">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all border border-gray-200"
+          className="absolute -left-10 top-1/2 -translate-y-1/2 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all border border-gray-200"
         >
           <ChevronLeft size={32} className="text-[#1A233A]" />
         </button>
 
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth snap-x scrollbar-hide px-4 py-4 justify-start md:justify-center"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className="snap-start shrink-0 w-[300px] md:w-[350px]"
-            >
-              <CourseCard {...item} />
-            </div>
-          ))}
+        <div className="overflow-hidden px-10">
+          <div
+            ref={scrollRef}
+            className="flex gap-0 overflow-x-auto scroll-smooth snap-x py-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {data.map((item, index) => (
+              <div
+                key={index}
+                className="snap-start shrink-0 w-[85vw] md:w-[calc(50%-60px)]"
+              >
+                <CourseCard {...item} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all border border-gray-200"
+          className="absolute -right-10 top-1/2 -translate-y-1/2 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all border border-gray-200"
         >
           <ChevronRight size={32} className="text-[#1A233A]" />
         </button>
@@ -76,4 +79,4 @@ const CustomSlider: React.FC<SliderProps> = ({ title, data }) => {
   );
 };
 
-export default CustomSlider;
+export default Slider;
