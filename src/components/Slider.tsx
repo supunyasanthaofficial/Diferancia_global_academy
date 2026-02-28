@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import CourseCard from "./CourseCard";
+import { useNavigate } from "react-router-dom";
 
 interface SliderData {
   image: string;
@@ -15,6 +16,7 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({ title, data }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -71,7 +73,10 @@ const Slider: React.FC<SliderProps> = ({ title, data }) => {
       </div>
 
       <div className="flex justify-center mt-12">
-        <button className="bg-[#1A233A] text-white px-12 py-3 rounded-lg font-bold text-lg hover:bg-black transition-all">
+        <button
+          onClick={() => navigate("/course")}
+          className="bg-[#1A233A] text-white px-12 py-3 rounded-lg font-bold text-lg hover:bg-black transition-all"
+        >
           More
         </button>
       </div>
