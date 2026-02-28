@@ -4,8 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import LB1 from "../assets/images/LB1.jpg";
 import LB2 from "../assets/images/LB2.png";
 import LB3 from "../assets/images/LB3.png";
-import L1 from "../assets/images/L1.png";
-
+// import Profile from "../assets/images/Profile.jpg"
 interface Lecturer {
   id: number;
   name: string;
@@ -17,26 +16,20 @@ interface Lecturer {
 const lecturers: Lecturer[] = [
   {
     id: 1,
-    name: "Mr.Eminem",
+    name: "Mr.Kelum Ekanayake",
     qualification: "Certificate in Information Technology",
     image: LB1,
-    avatar: L1,
+    // avatar: Profile,
   },
   {
     id: 2,
-    name: "Mr.Optimus Prime",
+    name: "Mr.Sunil Ekanayake",
     qualification: "Certificate in English",
     image: LB2,
   },
   {
     id: 3,
-    name: "Mr.Megatron",
-    qualification: "Certificate in Front Office Management",
-    image: LB3,
-  },
-  {
-    id: 3,
-    name: "Mr.Megatron",
+    name: "Mrs.Kasuni Perera",
     qualification: "Certificate in Front Office Management",
     image: LB3,
   },
