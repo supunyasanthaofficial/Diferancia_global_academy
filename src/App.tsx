@@ -7,6 +7,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Navbar from "./navigation/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <div className="font-sans text-gray-900 bg-white">
         <Navbar />
         <main>
+          <ScrollToTop/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
