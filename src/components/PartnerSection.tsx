@@ -22,8 +22,8 @@ const PartnerSection: React.FC = () => {
   return (
     <section className="bg-white py-20 px-4">
       <div className="flex items-center justify-center mb-16">
-        <div className="h-[1.5px] w-20 md:w-64 bg-black"></div>
-        <h2 className="text-4xl md:text-5xl font-serif mx-6 md:mx-10 text-[#1A233A]">
+        <div className="h-[1.5px] w-20 md:w-55 bg-black"></div>
+        <h2 className="text-4xl md:text-5xl font-bold font-serif mx-6 md:mx-10 text-[#1A233A]">
           Our Partners
         </h2>
         <div className="h-[1.5px] w-20 md:w-64 bg-black"></div>
