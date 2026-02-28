@@ -26,16 +26,36 @@ const Footer: React.FC = () => {
           </p>
 
           <div className="flex space-x-5">
-            <a href="#" className="hover:text-pink-600 transition-colors">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-600 transition-colors"
+            >
               <FaInstagram size={22} />
             </a>
-            <a href="#" className="hover:text-blue-500 transition-colors">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-500 transition-colors"
+            >
               <FaLinkedin size={22} />
             </a>
-            <a href="#" className="hover:text-green-500 transition-colors">
+            <a
+              href="https://wa.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-500 transition-colors"
+            >
               <FaWhatsapp size={22} />
             </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 transition-colors"
+            >
               <FaFacebook size={22} />
             </a>
           </div>
