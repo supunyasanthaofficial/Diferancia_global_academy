@@ -26,8 +26,8 @@ const Navbar: React.FC = () => {
       name: "Courses",
       path: "#",
       subLinks: [
-        { name: "Certificate Courses", path: "/courses/certificate" },
-        { name: "Diploma Programs", path: "/courses/diploma" },
+        { name: "Certificate Courses", path: "/course/certificate" },
+        { name: "Diploma Programs", path: "/course/diploma" },
       ],
     },
     { name: "Apply Now", path: "/apply" },
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="relative bg-[#0a1128] text-white shadow-lg z-[100]">
+    <nav className="relative bg-[#0a1128] text-white shadow-lg z-100">
       <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 md:px-8 py-4">
         <div className="flex items-center">
           <Link
@@ -181,4 +181,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;      
